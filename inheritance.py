@@ -48,3 +48,46 @@ class PartTimeEmployee(Employee):
 
 milton = PartTimeEmployee('Milton')
 print (milton.full_time_wage(10))
+
+#simple inheritance example
+
+class Polygon():
+  def __init__(self,length,breadth):
+    self.length = length
+    self.breadth = breadth
+
+  def disp(self):
+    print (f"The length is {self.length} and breadth is {self.breadth}")
+
+class Rectangle(Polygon):
+  def __init__(self,length,breadth):
+    super().__init__(length,breadth)
+
+  def area(self):
+    area = 0.5 * self.length* self.breadth
+    print (f"Area of rectangle is: {area}" )
+
+p1 = Rectangle(5,3)
+p1.disp()
+p1.area()
+
+
+#example 2
+
+class Student():
+   def __init__(self,student_name):
+       self.student_name = student_name
+   def get_name(self):
+       print (f"Student name is {self.student_name}")
+class Teacher(Student):
+   def __init__(self,student_name,teacher_name,teaching_subjects,salary):
+       super().__init__(student_name)
+       self.teacher_name = teacher_name
+       self.teaching_subjects =  teaching_subjects
+       self.salary = salary
+   def print_teacher(self):
+       print (f"{self.student_name} is taught by {self.teacher_name}")
+
+teacher1= Teacher("Hari","Binita Sharma","science",20000)
+teacher1.get_name()
+teacher1.print_teacher()
